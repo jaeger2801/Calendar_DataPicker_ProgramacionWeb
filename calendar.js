@@ -6,8 +6,36 @@ const next_mth_element = document.querySelector('.date-picker .dates .month .nex
 const prev_mth_element = document.querySelector('.date-picker .dates .month .prev-mth');
 const days_element = document.querySelector('.date-picker .dates .days');
 
-const images = [JanuaryImg, ]
+
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+let JanuaryImg
+let FebruaryImg
+let MarchImg
+let AprilImg
+let MayImg
+let JuneImg
+let JulyImg
+let AugustImg
+let SeptemberImg
+let OctoberImg
+let NovemberImg
+let DecemberImg
+
+let date = new Date();
+let day = date.getDate();
+let month = date.getMonth();
+let year = date.getFullYear();
+
+let selectedDate;
+let selectedDay;
+let selectedMonth;
+let selectedYear;
+
+let selectedDateTwo;
+let selectedDayTwo;
+let selectedMonthTwo;
+let selectedYearTwo;
 
 function preload() {
 	JanuaryImg = new loadImage('src/Jiraiya_img.png');
@@ -24,20 +52,7 @@ function preload() {
 	DecemberImg = new loadImage('src/December_img.png');
 }
 
-let date = new Date();
-let day = date.getDate();
-let month = date.getMonth();
-let year = date.getFullYear();
-
-let selectedDate;
-let selectedDay;
-let selectedMonth;
-let selectedYear;
-
-let selectedDateTwo;
-let selectedDayTwo;
-let selectedMonthTwo;
-let selectedYearTwo;
+const images = [JanuaryImg, FebruaryImg, MarchImg, AprilImg, MayImg, JuneImg, JulyImg, AugustImg, SeptemberImg, OctoberImg, NovemberImg, DecemberImg];
 
 mth_element.textContent = months[month] + ' ' + year;
 
