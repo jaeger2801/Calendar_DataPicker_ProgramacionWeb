@@ -24,8 +24,10 @@ h1 {
 	font-weight: 800;
 }
 
-h1 span {
-	font-weight: 400;
+.month-img{
+	display: flex;
+
+	
 }
 
 .date-picker {
@@ -74,11 +76,14 @@ h1 span {
 	font-size: 28px;
 }
 
+
+/* espacio de para donde van los dias del mes */
 .date-picker .dates {
 	
+	border-radius: 20px;
 	display: none;
 	position: absolute;
-	height: 450px;
+	height: 650px;
 	top: 100%;
 	left: 0;
 	right: 0;

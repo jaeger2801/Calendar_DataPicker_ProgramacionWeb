@@ -13,10 +13,15 @@ let day = date.getDate();
 let month = date.getMonth();
 let year = date.getFullYear();
 
-let selectedDate = date;
-let selectedDay = day;
-let selectedMonth = month;
-let selectedYear = year;
+let selectedDate;
+let selectedDay;
+let selectedMonth;
+let selectedYear;
+
+let selectedDateTwo;
+let selectedDayTwo;
+let selectedMonthTwo;
+let selectedYearTwo;
 
 mth_element.textContent = months[month] + ' ' + year;
 
@@ -27,6 +32,8 @@ populateDates();
 
 // EVENT LISTENERS
 date_picker_element.addEventListener('click', toggleDatePicker);
+
+//flechas que permiten el cambio entre meses
 next_mth_element.addEventListener('click', goToNextMonth);
 prev_mth_element.addEventListener('click', goToPrevMonth);
 
@@ -37,6 +44,8 @@ function toggleDatePicker (e) {
 	}
 }
 
+
+//funcion para cambio de meses (avance)
 function goToNextMonth (e) {
 	month++;
 	if (month > 11) {
@@ -47,6 +56,7 @@ function goToNextMonth (e) {
 	populateDates();
 }
 
+//funcion para cambio de meses (retroceso)
 function goToPrevMonth (e) {
 	month--;
 	if (month < 0) {
@@ -61,6 +71,7 @@ function populateDates (e) {
 	days_element.innerHTML = '';
 	let amount_days = 31;
 
+	//configuración mes de febrero
 	if (month == 1) {
 		amount_days = 28;
 	}
@@ -75,10 +86,20 @@ function populateDates (e) {
 		}
 
 		day_element.addEventListener('click', function () {
+
+			if(!selectedDate || selectedDateTwo){
 			selectedDate = new Date(year + '-' + (month + 1) + '-' + (i + 1));
 			selectedDay = (i + 1);
 			selectedMonth = month;
 			selectedYear = year;
+			}
+			else if(selectedDate && !selectedDateTwo){
+			selectedDateTwo = new Date(year + '-' + (month + 1) + '-' + (i + 1));
+			selectedDayTwo = (i + 1);
+			selectedMonthTwo = month;
+			selectedYearTwo = year;
+			}
+
 
 			selected_date_element.textContent = formatDate(selectedDate);
 			selected_date_element.dataset.value = selectedDate;
