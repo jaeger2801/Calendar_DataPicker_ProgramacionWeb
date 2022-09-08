@@ -79,6 +79,11 @@ function toggleDatePicker (e) {
 
 //funcion para cambio de meses (avance)
 function goToNextMonth (e) {
+	/* images++;
+	if (images > 11) {
+		images = 0;
+	} */
+
 	month++;
 	if (month > 11) {
 		month = 0;
@@ -90,6 +95,11 @@ function goToNextMonth (e) {
 
 //funcion para cambio de meses (retroceso)
 function goToPrevMonth (e) {
+	/* images--;
+	if (images < 0) {
+		images = 11;
+	} */
+
 	month--;
 	if (month < 0) {
 		month = 11;
