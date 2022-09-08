@@ -81,7 +81,13 @@ function populateDates (e) {
 		day_element.classList.add('day');
 		day_element.textContent = i + 1;
 
-		if (selectedDay == (i + 1) && selectedYear == year && selectedMonth == month) {
+		if(selectedDay == (i + 1) && selectedYear == year && selectedMonth == month) 
+		{
+			day_element.classList.add('selected');
+		}
+
+		if(selectedDayTwo == (i + 1) && selectedYearTwo == year && selectedMonthTwo == month)
+		{
 			day_element.classList.add('selected');
 		}
 
@@ -92,8 +98,8 @@ function populateDates (e) {
 			selectedDay = (i + 1);
 			selectedMonth = month;
 			selectedYear = year;
-			}
-			else if(selectedDate && !selectedDateTwo){
+
+			} else if(selectedDate && !selectedDateTwo){
 			selectedDateTwo = new Date(year + '-' + (month + 1) + '-' + (i + 1));
 			selectedDayTwo = (i + 1);
 			selectedMonthTwo = month;
