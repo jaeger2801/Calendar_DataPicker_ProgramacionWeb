@@ -46,7 +46,8 @@ h1 span {
 	
 	display: flex;
 	justify-content: space-around;
-	margin-top: 50px;
+	margin-top: 40px;
+	margin-bottom: 40px;
 	align-items: center;
 	border-bottom: 2px solid #EEE;
 
@@ -67,7 +68,8 @@ h1 span {
 	justify-content: center;
 	align-items: center;
 
-	color: #313131;
+	font-family: 'Poppins', sans-serif;
+	color: #343434;
 	font-size: 28px;
 }
 
@@ -75,19 +77,20 @@ h1 span {
 	
 	display: none;
 	position: absolute;
+	height: 450px;
 	top: 100%;
 	left: 0;
 	right: 0;
+	
 
 	background-color: #FFF;
 }
 
+
+/* funcion que permite desplegar la informacion del calendario */
 .date-picker .dates.active {
 	display: block;
 }
-
-
-
 
 .date-picker .dates .month .arrows {
 	width: 35px;
@@ -104,14 +107,16 @@ h1 span {
 }
 
 .date-picker .dates .month .arrows:active {
-	background-color: #00CA85;
+	background-color: #f84975;
 }
 
+/* disposicion de las columnas */
 .date-picker .dates .days {
 	display: grid;
 	grid-template-columns: repeat(7, 1fr);
-	height: 200px;
+	height: 300px;
 }
+
 .date-picker .dates .days .day { 
 	
 	display: flex;
@@ -121,7 +126,9 @@ h1 span {
 
 	font-family: 'Poppins', sans-serif;
 	font-weight: 400;
+	
 }
+
 .date-picker .dates .days .day.selected {
 	background-color: #e23c3c;
 }
