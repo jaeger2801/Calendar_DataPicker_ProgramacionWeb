@@ -76,6 +76,19 @@ h1 {
 	font-size: 28px;
 }
 
+.date-picker .selected-date-two {
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-family: 'Poppins', sans-serif;
+	color: #343434;
+	font-size: 28px;
+}
+
 
 /* espacio de para donde van los dias del mes */
 .date-picker .dates {
