@@ -136,6 +136,18 @@ h1 {
 }
 
 .date-picker .dates .days .day.selected {
-	background-color: #e23c3c;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	background-color: #4cb196;
+}
+
+.date-picker .dates .days .day.selected-two {
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	background-color: #4cb196;
+}
+
+.date-picker .dates .days .day.between {
+	background-color: #fcebd7;
 }
 

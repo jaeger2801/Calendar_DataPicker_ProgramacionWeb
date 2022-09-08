@@ -88,7 +88,11 @@ function populateDates (e) {
 
 		if(selectedDayTwo == (i + 1) && selectedYearTwo == year && selectedMonthTwo == month)
 		{
-			day_element.classList.add('selected');
+			day_element.classList.add('selected-two');
+		}
+
+		if(selectedDate && selectedDateTwo && validateBetweenDates(i)){
+			day_element.classList.add('between');
 		}
 
 		day_element.addEventListener('click', function () {
@@ -98,6 +102,10 @@ function populateDates (e) {
 			selectedDay = (i + 1);
 			selectedMonth = month;
 			selectedYear = year;
+			selectedDateTwo = undefined
+			selectedDayTwo = undefined
+			selectedMonthTwo = undefined
+			selectedYearTwo = undefined
 
 			} else if(selectedDate && !selectedDateTwo){
 			selectedDateTwo = new Date(year + '-' + (month + 1) + '-' + (i + 1));
@@ -115,6 +123,21 @@ function populateDates (e) {
 
 		days_element.appendChild(day_element);
 	}
+}
+
+
+/* validacion de las dias entre fechas seleccionadas */
+function validateBetweenDates(currentDay) {
+	return ( selectedDate < selectedDateTwo && 
+		(
+			((currentDay + 1) > selectedDay && (currentDay + 1) < selectedDayTwo) && 
+			(year >= selectedYear &&  year <= selectedYearTwo) &&
+			(month >= selectedMonth && month <= selectedMonthTwo)
+		))
+		/* {
+			return true
+		}
+		else return false */
 }
 
 // HELPER FUNCTIONS
