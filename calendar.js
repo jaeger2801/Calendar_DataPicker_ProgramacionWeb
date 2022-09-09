@@ -11,18 +11,20 @@ const images_per_month = document.querySelector('.date-picker .month-img');
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-let JanuaryImg
-let FebruaryImg
-let MarchImg
-let AprilImg
-let MayImg
-let JuneImg
-let JulyImg
-let AugustImg
-let SeptemberImg
-let OctoberImg
-let NovemberImg
-let DecemberImg
+const JanuaryImg = 'src/Jiraiya_img.png';
+const FebruaryImg = 'src/February_img.png';
+const MarchImg = 'src/March_img.png';
+const AprilImg = 'src/April_img.png';
+const MayImg = 'src/May_img.png';
+const JuneImg = 'src/June_img.png';
+const JulyImg = 'src/July_img.png';
+const AugustImg = 'src/August_img.png';
+const SeptemberImg = 'src/September_img.png';
+const OctoberImg = 'src/October_img.png';
+const NovemberImg = 'src/November_img.png';
+const DecemberImg = 'src/December_img.png';
+
+let imagesMonth = [JanuaryImg, FebruaryImg, MarchImg, AprilImg, MayImg, JuneImg, JulyImg, AugustImg, SeptemberImg, OctoberImg, NovemberImg, DecemberImg];
 
 let date = new Date();
 let day = date.getDate();
@@ -39,22 +41,6 @@ let selectedDayTwo;
 let selectedMonthTwo;
 let selectedYearTwo;
 
-function preload() {
-	JanuaryImg = new loadImage('src/Jiraiya_img.png');
-	FebruaryImg = new loadImage('src/February_img.png');
-	MarchImg = new loadImage('src/March_img.png');
-	AprilImg = new loadImage('src/April_img.png');
-	MayImg = new loadImage('src/May_img.png');
-	JuneImg = new loadImage('src/June_img.png');
-	JulyImg = new loadImage('src/July_img.png');
-	AugustImg = new loadImage('src/August_img.png');
-	SeptemberImg = new loadImage('src/September_img.png');
-	OctoberImg = new loadImage('src/October_img.png');
-	NovemberImg = new loadImage('src/November_img.png');
-	DecemberImg = new loadImage('src/December_img.png');
-}
-
-const images = [JanuaryImg, FebruaryImg, MarchImg, AprilImg, MayImg, JuneImg, JulyImg, AugustImg, SeptemberImg, OctoberImg, NovemberImg, DecemberImg];
 
 mth_element.textContent = months[month] + ' ' + year;
 
@@ -96,6 +82,7 @@ function goToNextMonth (e) {
 		year++;
 	}
 	mth_element.textContent = months[month] + ' ' + year;
+	drawImages(month);
 	populateDates();
 }
 
@@ -112,6 +99,7 @@ function goToPrevMonth (e) {
 		year--;
 	}
 	mth_element.textContent = months[month] + ' ' + year;
+	drawImages(month);
 	populateDates();
 }
 
@@ -216,4 +204,9 @@ function formatDate (d) {
 	let year = d.getFullYear();
 
 	return day + ' / ' + month + ' / ' + year;
+}
+
+function drawImages(index) {
+	images_per_month.setAttribute("src",imagesMonth[index]);
+	console.log(imagesMonth);
 }
