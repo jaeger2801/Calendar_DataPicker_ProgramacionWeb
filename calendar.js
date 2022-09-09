@@ -1,5 +1,6 @@
 const date_picker_element = document.querySelector('.date-picker');
 const selected_date_element = document.querySelector('.date-picker .selected-date');
+const selected_date_element_two = document.querySelector('.date-picker .selected-date-two');
 const dates_element = document.querySelector('.date-picker .dates');
 const mth_element = document.querySelector('.date-picker .dates .month .mth');
 const next_mth_element = document.querySelector('.date-picker .dates .month .next-mth');
@@ -58,6 +59,10 @@ mth_element.textContent = months[month] + ' ' + year;
 
 selected_date_element.textContent = formatDate(date);
 selected_date_element.dataset.value = selectedDate;
+
+/* selector de la segunda fecha */
+selected_date_element_two.textContent = formatDate(date);
+selected_date_element_two.dataset.value = selectedDateTwo;
 
 
 populateDates();
@@ -159,6 +164,9 @@ function populateDates (e) {
 
 			selected_date_element.textContent = formatDate(selectedDate);
 			selected_date_element.dataset.value = selectedDate;
+
+			selected_date_element_two.textContent = formatDate(selectedDateTwo);
+			selected_date_element_two.dataset.value = selectedDateTwo;
 
 			populateDates();
 		});
