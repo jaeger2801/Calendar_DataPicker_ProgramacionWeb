@@ -24,13 +24,15 @@ h1 {
 	font-weight: 800;
 }
 
-.month-img{
+.month-img1{
 	display: flex;
 
 	
 }
 
 .date-picker {
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
 	position: relative;
 	width: 100%;
 	max-width: 1000px;

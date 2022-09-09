@@ -6,6 +6,7 @@ const mth_element = document.querySelector('.date-picker .dates .month .mth');
 const next_mth_element = document.querySelector('.date-picker .dates .month .next-mth');
 const prev_mth_element = document.querySelector('.date-picker .dates .month .prev-mth');
 const days_element = document.querySelector('.date-picker .dates .days');
+const images_per_month = document.querySelector('.date-picker .month-img');
 
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -121,6 +122,7 @@ function populateDates (e) {
 	//configuración mes de febrero
 	if (month == 1) {
 		amount_days = 28;
+
 	}
 
 	for (let i = 0; i < amount_days; i++) {
